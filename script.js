@@ -39,7 +39,6 @@ function init() {
     let size = Math.random() * 2 + 0.75;
     particleArray.push(new Universe(moveRadius, step, position, size));
   }
-  console.log(particleArray);
 }
 init();
 
@@ -87,7 +86,7 @@ class SunEarthMoon {
     this.ex = this.sx + this.eRadius * Math.cos(this.eAngle);
     this.ey = this.sy + this.eRadius * Math.sin(this.eAngle);
 
-    this.mAngle += 0.09 * 0.2;
+    this.mAngle += 0.09 * 0.5;
     this.mx = this.ex + this.mRadius * Math.cos(this.mAngle);
     this.my = this.ey + this.mRadius * Math.sin(this.mAngle);
   }
@@ -162,7 +161,8 @@ animate();
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  init();
   sunEarthMoon.draw();
   sunEarthMoon.update();
+  init()
+  
 });
